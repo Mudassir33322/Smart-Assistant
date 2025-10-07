@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Assistant (Roman Urdu)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1><i class="fas fa-robot"></i> Smart Assistant</h1>
+            <div id="digital-clock"></div>
+        </header>
+
+        <section id="task-input">
+            <input type="text" id="task-name" placeholder="Task Ka Naam (Task Name)" required>
+            <input type="time" id="task-time" step="1" required> 
+            <select id="task-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="add-task-btn">Kaam Shamil Karien (Add Task)</button>
+        </section>
+
+        <section id="task-list-container">
+            <h2>Aapka Schedule</h2>
+            <ul id="task-list">
+                </ul>
+        </section>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

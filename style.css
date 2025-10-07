@@ -1,0 +1,163 @@
+:root {
+    --dark-bg: #1e1e2f;
+    --card-bg: #27293d;
+    --primary-color: #00bcd4;
+    --success-color: #4CAF50; /* Green: Done (Poora) */
+    --warning-color: #FF9800; /* Orange: Soon (Jald) */
+    --danger-color: #F44336;  /* Red: Overdue (Late) */
+    --text-color: #f0f0f0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #1e1e2f, #3a3b4f, #1e1e2f);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#app-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+#digital-clock {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    background: #353852;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Input and Button Styling --- */
+#task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#task-input input, #task-input select {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #353852;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+#add-task-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#add-task-btn:hover {
+    background-color: #008c9e;
+    transform: scale(1.02);
+}
+
+/* --- Task List Styling --- */
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background-color: #353852;
+    border-left: 5px solid #5a5d7c; /* Default pending color */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Highlighting */
+.task-status-done { 
+    border-left-color: var(--success-color) !important; 
+    opacity: 0.6; 
+    text-decoration: line-through;
+}
+.task-status-soon { border-left-color: var(--warning-color) !important; }
+.task-status-overdue { border-left-color: var(--danger-color) !important; }
+.current-task { 
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color);
+}
+
+/* Task Details */
+.task-time {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.task-priority {
+    font-size: 0.8em;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: #5a5d7c;
+    margin-left: 10px;
+}
+
+/* Task Buttons */
+.task-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-complete {
+    background-color: var(--success-color);
+    color: white;
+    margin-right: 5px;
+}
+
+.btn-delete {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-complete:hover { background-color: #388E3C; }
+.btn-delete:hover { background-color: #D32F2F; }
